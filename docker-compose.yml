@@ -1,0 +1,14 @@
+services:
+  nginx-proxy-manager:
+    image: erp7441/npm_ntlm:latest
+    container_name: npm_ntlm_test
+    restart: unless-stopped
+    ports:
+      - "8080:81"   # admin UI
+      - "8081:80"   # http
+      - "8443:443"  # https
+    environment:
+      DB_SQLITE_FILE: "/data/database.sqlite"
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
