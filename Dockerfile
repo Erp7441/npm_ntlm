@@ -1,4 +1,5 @@
-ARG NGINX_VERSION=1.29.8
+# NGINX version must match the nginx version of jc21/nginx-proxy-manager:latest
+ARG NGINX_VERSION=1.29.2
 FROM debian:bookworm-slim AS builder
 
 ARG NGINX_VERSION
